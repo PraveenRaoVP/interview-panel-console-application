@@ -20,6 +20,9 @@ public class Admin {
         this.adminOrganization = adminOrganization;
     }
 
+    public Admin() {
+    }
+
     public int getAdminId() {
         return adminId;
     }
