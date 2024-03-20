@@ -1,0 +1,64 @@
+1. Interview Panel Options
+2. Candidate Options
+3. Admin Options
+
+
+Interview Panel Options:
+
+1. Add new Interview Panel
+	-> Get details of interviewer
+	-> Push interviewer details to the interviewer database
+	-> Push the admin id and interview panel id to the admintointerviewpanel database
+2. Terminate Current Interview In a panel:
+	-> Display the panels created by that admin by referring to admintointerviewpanel database with the candidates' and Interviewer name present in it
+	-> Dequeue the candidate and change his interview status to UNDER_REVIEW
+2. Clear an Interview Panel:
+	-> Display the panels created by that admin by referring to admintointerviewpanel database with the candidates name present in it
+	-> Clear the queue of the particular interview panel
+	
+3. Clear all queues
+	-> Display the panels created by that admin by referring to admintointerviewpanel database with the candidates name present in it
+	-> Ask for confirmation
+	-> Clear the queues of all the interview panels in the interviewpanel database
+
+4. Delete interview panel
+	-> Display all the interview panels and prompt admin to enter interview panel id
+	-> Delete the panel from the interview panel and remove the panel id from the admintointerviewpanel database
+	
+5. View All Interview Panels
+	-> Display all the interview panels created by the admin
+
+
+Candidate Options:
+1. Add Candidate to Panel
+	-> Get candidate Details - 
+	-> Add candidate to queue with the lowest number of candidates and change candidate status to WAITING_FOR_INTERVIEW
+
+2. Remove Candidate: 
+	-> Get the candidate Id
+	-> Search all panels with admin id for the candidate id
+	-> Remove the candidate from the queue and change the candidate status to CANCELLED
+
+
+
+
+
+4. Change result of candidate
+	-> Prompt the candidate ID from the admin
+	-> Change the interview status to REJECTED or SELECTED
+	
+
+Admin Options:
+1. Add New Admin
+	-> Get admin details
+	-> Store them in admin database
+2. Remove Admin
+	-> Get admin id
+	-> Remove the admin data from the database
+	-> Remove the panels created by the admin
+3. Update Admin
+	-> Get admin details
+	-> Update them in the database
+
+TODOS:-
+wherever admin id is used, use CacheMemory.getAdminId(); // done
